@@ -1,32 +1,83 @@
 \documentclass{article}
 \usepackage[english]{babel}
-\usepackage{lipsum,calc,xcolor}
-\usepackage[a4paper,bindingoffset=0cm,%
-            left=-0.1mm,right=0mm,top=0mm,bottom=-5mm,%
-            footskip=0mm]{geometry}
- 
-\usepackage{multicol}
-\usepackage{marginnote}
+\usepackage{xcolor}
+\usepackage{fontspec}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage[a4paper,bindingoffset=0cm,left=-0.1mm,right=0mm,%
+            top=0mm,bottom=-5mm,footskip=0mm]{geometry}
+    
+% Default Font : Clear Sans            
+\usepackage[sfdefault]{ClearSans}
+% Heading Font : Segoeuib
+\newfontfamily\headingfont[Path = fonts/]{segoeuib.ttf}
+            
+\definecolor{white}{RGB}{255,255,255}
+\definecolor{gray}{HTML}{4D4D4D}
+\definecolor{sidecolor}{HTML}{E7E7E7}
+\definecolor{mainblue}{HTML}{0E5484}
+\definecolor{maingray}{HTML}{B9B9B9}
+\definecolor{pblue}{HTML}{0395DE}
+\definecolor{darkgray}{HTML}{333333}
+\definecolor{gray}{HTML}{4D4D4D}
+\definecolor{lightgray}{HTML}{999999}
+\definecolor{green}{HTML}{C2E15F}
+\definecolor{orange}{HTML}{FDA333}
+\definecolor{purple}{HTML}{D3A4F9}
+\definecolor{red}{HTML}{FB4485}
+\definecolor{blue}{HTML}{6CE0F1}
+\definecolor{pblue}{HTML}{0395DE}
+\definecolor{materialpurple}{HTML}{9C27B0}
+\definecolor{materialindigo}{HTML}{3F51B5}
+\definecolor{materialblue}{HTML}{2196F3}
+\definecolor{materialcyan}{HTML}{00BCD4}
+\definecolor{materialteal}{HTML}{009688}
+\definecolor{materialgreen}{HTML}{4CAF50}
+\definecolor{materiallime}{HTML}{CDDC39}
+\definecolor{materialamber}{HTML}{FFC107}
+\definecolor{materialbrown}{HTML}{795548}
+\definecolor{materialred}{HTML}{FF4436}
+\definecolor{materialorange}{HTML}{FF5722}
+\definecolor{linkedin}{HTML}{0085AE}
+\definecolor{yt}{HTML}{c71610}
+
+\newcommand*{\mpoint}[0]{%
+  \raisebox{-.15\baselineskip}{%
+    \includegraphics[
+      height=\baselineskip,
+      width=\baselineskip,
+      keepaspectratio,
+    ]{point.png}%
+  }%
+}
  
 \begin{document}
+
 \vspace*{-0.67cm}
 \hspace*{-0.76cm}
-\noindent{
-    \setlength{\fboxrule}{0pt}
-    \fcolorbox{blue}{gray}{
-        \begin{minipage}[t][29.5cm][t]{0.318\textwidth}
-        \vspace*{2mm}
-        \lipsum[1]
-        \end{minipage}
-    }
-    \hspace*{-1.5mm}
-    \fcolorbox{white}{white}{
-        \begin{minipage}[t][29.5cm][t]{13.42cm}
-        \vspace*{2mm}
-        \lipsum[1]
-        \end{minipage}
-    }
-}
+\noindent{\setlength{\fboxrule}{0pt}\fcolorbox{sidecolor}{sidecolor}{\begin{minipage}[t][29.5cm][t]{0.318\textwidth}
+%% ----------- SideBar Content -----------
+\vspace*{6mm}
+\hspace*{3mm}\Huge\color{pblue} Frédéric
+
+\vspace*{1mm}
+\hspace*{3mm}\Huge\color{pblue} de Goumoëns
+
+\vspace*{4mm}
+\hspace*{3mm}\Large\color{black!80} Microengineering - EPFL \hfill\null
+%% End of SideBar Content        
+\end{minipage}}\hspace*{-1.5mm}\fcolorbox{white}{white}{\begin{minipage}[t][29.5cm][t]{13.42cm}
+%% ----------- Main Page Content -----------
+        \vspace*{5mm}
+        \hfill \scalebox{1.2}{\href{http://fdeg.ch/CV}{\textbf{\textcolor{gray}{fdeg.ch}\textcolor{pblue}{/CV }}\mpoint}} 
+        
+        \vspace*{-3mm}
+        \hspace*{3mm}{\headingfont\LARGE\color{pblue}Edu\color{gray}cation}
+        
+        \vspace*{4mm}
+        \hspace*{3mm}\small{aaa}
+%% End of Main Page Content  
+\end{minipage}}}
 \end{document}
 
 
